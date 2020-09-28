@@ -118,7 +118,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         attrs['author'] = self.context['request'].user
         review = Review.objects.filter(title_id=attrs['title'],
                                        author=self.context['request'].user)
-        if not self.partial and review:                                  # в ТЗ не было задания о редактировании отзыва
+        if not self.partial and review:
             raise ValidationError('Вы уже писали отзыв на это произведение')
         return attrs
 

@@ -81,13 +81,17 @@ class Genres(models.Model):
 
 
 class Titles(models.Model):
-    name = models.CharField(max_length=200, verbose_name='Название произведения')
+    name = models.CharField(max_length=200,
+                            verbose_name='Название произведения')
     year = models.IntegerField(verbose_name='Год')
     category = models.ForeignKey(Categories,
                                  on_delete=models.SET_NULL,
                                  blank=True,
                                  null=True, verbose_name='Категория')
-    genre = models.ManyToManyField('Genres', related_name='title', blank=True, verbose_name='Жанр')
+    genre = models.ManyToManyField('Genres',
+                                   related_name='title',
+                                   blank=True,
+                                   verbose_name='Жанр')
     description = models.TextField(verbose_name='Описание')
     rating = models.IntegerField(null=True, verbose_name='Рейтинг')
 
@@ -100,11 +104,15 @@ class Review(models.Model):
         Titles, on_delete=models.CASCADE, related_name='reviews')
     text = models.TextField(verbose_name='Текст')
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='reviews', verbose_name='Автор')
+        User, on_delete=models.CASCADE,
+        related_name='reviews',
+        verbose_name='Автор')
     score = models.IntegerField(
         default=0,
         validators=[MinValueValidator(1), MaxValueValidator(10)], verbose_name='Оценка')
-    pub_date = models.DateTimeField( auto_now_add=True, db_index=True, verbose_name='Дата публикации')
+    pub_date = models.DateTimeField( auto_now_add=True,
+                                     db_index=True,
+                                     verbose_name='Дата публикации')
 
 
 class Comments(models.Model):
@@ -112,5 +120,9 @@ class Comments(models.Model):
         Review, on_delete=models.CASCADE, related_name='comments')
     text = models.TextField(verbose_name='Текст')
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="comments", verbose_name='Автор')
-    pub_date = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Дата публикации')
+        User, on_delete=models.CASCADE,
+        related_name="comments",
+        verbose_name='Автор')
+    pub_date = models.DateTimeField(auto_now_add=True,
+                                    db_index=True,
+                                    verbose_name='Дата публикации')
