@@ -1,20 +1,15 @@
 import hashlib
 
-from django.contrib.auth import authenticate
-from django.core.validators import validate_email
 from django.shortcuts import get_object_or_404
 from django.db.models import Avg
 
-from rest_framework import exceptions, serializers
+from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
-from rest_framework_simplejwt.serializers import TokenObtainSerializer, \
-    TokenObtainPairSerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
-from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.exceptions import (
     ValidationError,
-    PermissionDenied,
-    AuthenticationFailed
+
 )
 
 from .models import User, Categories, Genres, Titles, Review, Comments

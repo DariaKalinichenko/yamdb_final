@@ -41,11 +41,22 @@ class User(AbstractBaseUser):
                               max_length=255,
                               unique=True,
                               )
-    first_name = models.CharField(max_length=200, blank=True, verbose_name='Имя')
-    last_name = models.CharField(max_length=200, blank=True, verbose_name='Фамилия')
-    username = models.SlugField(unique=True, blank=True, null=True, verbose_name='Логин')
-    bio = models.TextField(blank=True, verbose_name='О себе')
-    role = models.CharField(max_length=10, choices=USER_ROLES, default='user', verbose_name='Роль')
+    first_name = models.CharField(max_length=200,
+                                  blank=True,
+                                  verbose_name='Имя')
+    last_name = models.CharField(max_length=200,
+                                 blank=True,
+                                 verbose_name='Фамилия')
+    username = models.SlugField(unique=True,
+                                blank=True,
+                                null=True,
+                                verbose_name='Логин')
+    bio = models.TextField(blank=True,
+                           verbose_name='О себе')
+    role = models.CharField(max_length=10,
+                            choices=USER_ROLES,
+                            default='user',
+                            verbose_name='Роль')
     objects = UserManager()
     USERNAME_FIELD = 'email'
 
