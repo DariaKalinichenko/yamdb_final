@@ -13,8 +13,11 @@ class TestRequirements:
             assert False, 'Проверьте, что добавили файл requirements.txt'
 
         assert 'gunicorn' in requirements, 'Проверьте, что ' \
-                                           'добавили gunicorn в файл requirements.txt'
+                                           'добавили gunicorn в ' \
+                                           'файл requirements.txt'
         assert 'django' in requirements, 'Проверьте, что ' \
-                                         'добавили django в файл requirements.txt'
+                                         'добавили django в ' \
+                                         'файл requirements.txt'
         assert 'pytest-django' in requirements, 'Проверьте, что ' \
-                                                'добавили pytest-django в файл requirements.txt'
+                                                'добавили pytest-django ' \
+                                                'в файл requirements.txt'

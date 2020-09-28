@@ -16,4 +16,5 @@ class TestReadme:
         re_str = r'https:\/\/github\.com\/[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+\/workflows\/[a-zA-Z0-9_-]+\/badge\.svg'  # noqa: E501
 
         assert re.search(re_str, readme), 'Проверьте, что добавили ' \
-                                          'бейдж о статусе работы workflow в файл README.md'
+                                          'бейдж о статусе работы workflow ' \
+                                          'в файл README.md'
