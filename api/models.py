@@ -109,10 +109,11 @@ class Review(models.Model):
         verbose_name='Автор')
     score = models.IntegerField(
         default=0,
-        validators=[MinValueValidator(1), MaxValueValidator(10)], verbose_name='Оценка')
-    pub_date = models.DateTimeField( auto_now_add=True,
-                                     db_index=True,
-                                     verbose_name='Дата публикации')
+        validators=[MinValueValidator(1), MaxValueValidator(10)],
+        verbose_name='Оценка')
+    pub_date = models.DateTimeField(auto_now_add=True,
+                                    db_index=True,
+                                    verbose_name='Дата публикации')
 
 
 class Comments(models.Model):

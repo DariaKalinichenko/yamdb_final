@@ -134,7 +134,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
             permission_classes = [permissions.IsAuthenticated,
                                   IsModeratorPermission]
         elif self.action in ('update', 'partial_update'):
-            permission_classes = [permissions.IsAuthenticated, IsOwnerPermission]
+            permission_classes = [permissions.IsAuthenticated, IsOwnerPermission]  # noqa: E501
         else:
             permission_classes = [permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
@@ -163,7 +163,7 @@ class CommentViewSet(viewsets.ModelViewSet):
             permission_classes = [permissions.IsAuthenticated,
                                   IsModeratorPermission]
         elif self.action in ('update', 'partial_update'):
-            permission_classes = [permissions.IsAuthenticated, IsOwnerPermission]
+            permission_classes = [permissions.IsAuthenticated, IsOwnerPermission]  # noqa: E501
         else:
             permission_classes = [permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
