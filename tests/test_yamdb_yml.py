@@ -21,7 +21,9 @@ class TestWorkflow:
         assert 'appleboy/ssh-action' in yamdb, 'Проверьте, что добавили ' \
                                                'деплой в файл ' \
                                                'yamdb_workflow.yaml'
-        assert 'appleboy/telegram-action' in yamdb, 'Проверьте, что добавили ' \
+        assert 'appleboy/telegram-action' in yamdb, 'Проверьте, что ' \
+                                                    'добавили ' \
                                                     'доставку отправку ' \
                                                     'telegram сообщения ' \
-                                                    'в файл yamdb_workflow.yaml'
+                                                    'в файл ' \
+                                                    'yamdb_workflow.yaml'
