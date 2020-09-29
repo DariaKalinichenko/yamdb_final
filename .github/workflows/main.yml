@@ -50,7 +50,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: 130.193.56.229
-          username: praktikum
+          username: admin
           port: 22
           key: ${{ secrets.SSH_KEY }}
           script: |
