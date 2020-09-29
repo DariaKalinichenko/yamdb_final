@@ -1,4 +1,4 @@
-name: yamdb workflow
+name: yamdb_workflow
 
 on: [push]
 
@@ -8,7 +8,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
@@ -23,7 +23,7 @@ jobs:
       run: flake8 .
 
     - name: Test with pytest
-      run: pytest tests.py
+      run: pytest
 
 
   build_and_push_to_docker_hub:
@@ -49,8 +49,9 @@ jobs:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
+          host: 130.193.56.229
+          username: admin
+          port: 22
           key: ${{ secrets.SSH_KEY }}
           script: |
             sudo docker pull praktikum/yamdb

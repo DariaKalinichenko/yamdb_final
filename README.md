@@ -1,1 +1,1 @@
-![GitHub Workflow Status](https://github.com/DariaKalinichenko/yamdb_final/workflows/main/badge.svg)
+![yamdb_workflow Action Status](https://github.com/DariaKalinichenko/yamdb_final/workflows/yamdb_workflow/badge.svg)
