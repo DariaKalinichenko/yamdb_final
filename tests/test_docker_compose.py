@@ -16,4 +16,4 @@ class TestDockerfileCompose:
         assert re.search(r'image:\s+postgres:latest', docker_compose), \
             'Проверьте, что добавили образ postgres:latest в файл docker_compose'  # noqa: E501
         assert re.search(r'build:\s+\.', docker_compose), \
-            'Проверьте, что добавили сборку контейнера из Dockerfile.txt в файл docker_compose'  # noqa: E501
+            'Проверьте, что добавили сборку контейнера из Dockerfile-nginx.txt в файл docker_compose'  # noqa: E501
